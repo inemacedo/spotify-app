@@ -1,0 +1,10 @@
+.header-background {
+    background-image: 
+      url("https://images.unsplash.com/photo-1556196148-1fb724238998?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+  /* filter: grayscale(100%); */
+  background-size: cover;
+  background-position: center;
+  height: 42rem;
+  /* object-fit: contain; */
+  margin-bottom: 6rem;
+}
