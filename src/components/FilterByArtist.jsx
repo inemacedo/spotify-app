@@ -1,42 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function FilterByArtist() {
   const [artistName, setArtistName] = useState([]);
+  const [albums, setAlbums] = useState([]);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    const getAlbums = async () => {
-      const response1 = await axios.get(
-        `https://api.spotify.com/v1/search?q=artist:${artistName}&type=artist`,
-        {
-          headers: {
-            Authorization:
-              "Bearer BQDMWoSJuj5YQSFB1fxZrL8IJXw2h6PFar1k_sdWQJoJEMqBHhKjpK00P2-utTRd6gXr4LwEyyb8_-gyF2M-93cibm-7pEg9f586RCCveg6yufCIrjNsQB7AKha6OldnGmWA6yA",
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
-      );
-      const artistId = response1.data.artists.items[0].id;
-      console.log(artistId);
 
-      // const response2 = await axios.get(
-      //   `https://api.spotify.com/v1/artists/${artistId}/albums`,
-      //   {
-      //     headers: {
-      //       Authorization:
-      //         "Bearer BQDMWoSJuj5YQSFB1fxZrL8IJXw2h6PFar1k_sdWQJoJEMqBHhKjpK00P2-utTRd6gXr4LwEyyb8_-gyF2M-93cibm-7pEg9f586RCCveg6yufCIrjNsQB7AKha6OldnGmWA6yA",
-      //       "Content-Type": "application/json",
-      //       Accept: "application/json",
-      //     },
-      //   }
-      // );
-      // const artistAlbums = response2.data.artists.items;
-      // console.log(artistAlbums);
-    };
-    getAlbums();
-    console.log(ev);
+    const response = await axios.get(
+      `http://localhost:8000/api/albums?artistName=${artistName}`
+    );
+    const artistAlbums = response.data.albums;
+    console.log(artistAlbums);
+    setAlbums(response.data.albums);
   };
 
   return (
