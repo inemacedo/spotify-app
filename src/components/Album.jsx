@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/Album.css";
 
-function Album() {
+function Album({ album }) {
   return (
     <div>
       <img
-        className="album-image img-fluid shadow mb-2 bg-body rounded-3"
-        src="https://upload.wikimedia.org/wikipedia/en/b/bf/This_Love_cover.png"
-        alt="album.name"
+        className="album-image img-fluid shadow mb-3 bg-body rounded-3"
+        src={album.images[0].url}
+        alt={album.name}
       />
-      <h3 className="fs-5 mt-1 text-secondary">This Love</h3>
+      <h3 className="fs-5 mt-1 text-secondary">{album.name}</h3>
     </div>
   );
 }
