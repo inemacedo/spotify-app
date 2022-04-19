@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { uniqBy } from "lodash";
 import "../styles/FilterByArtist.css";
+import { Spinner } from "react-bootstrap";
 
 function FilterByArtist() {
   const [artistName, setArtistName] = useState([]);
@@ -45,13 +46,15 @@ function FilterByArtist() {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          disabled={loading}
-          className="search-btn btn btn-primary w-10"
-        >
-          Search
-        </button>
+        {loading ? (
+          <Spinner animation="border mx-auto" role="status" variant="light">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : (
+          <button type="submit" className="search-btn btn btn-primary w-10">
+            Search
+          </button>
+        )}
       </form>
     </div>
   );
