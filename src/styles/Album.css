@@ -7,4 +7,5 @@
   
   .album-image {
     transition: color, background-color 0.5s, transform 1s;
+    min-height: 288px;
   }

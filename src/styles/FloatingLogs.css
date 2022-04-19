@@ -1,0 +1,20 @@
+#floatingLogs {
+    position: fixed;
+    top: 68%;
+    right: 0;
+    transform: translate(calc(50% - 1rem), -50%) rotate(-90deg);
+    border: 1px;
+  }
+  #floatingLogs .link {
+    display: block;
+    background: #e16513;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+    transition: color, background-color 0.3s;
+  }
+  #floatingLogs .link:hover {
+    opacity: 1;
+    background-color: #0a0a0a;
+    color: white;
+  }

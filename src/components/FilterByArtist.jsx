@@ -15,7 +15,7 @@ function FilterByArtist() {
     setLoading(true);
 
     const response = await axios.get(
-      `http://localhost:8000/api/albums?artistName=${artistName}`
+      `${process.env.REACT_APP_API_URL}/api/albums?artistName=${artistName}`
     );
     const artistAlbums = response.data.albums;
     console.log(artistAlbums);
