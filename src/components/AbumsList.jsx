@@ -12,7 +12,7 @@ function AbumsList() {
       ) : (
         <h3 className="d-none"> </h3>
       )}
-      <div className="row g-5">
+      <div className="row">
         {albums.map((album) => (
           <div className="col-md-3" key={album.id}>
             <Album album={album} />

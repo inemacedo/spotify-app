@@ -31,21 +31,26 @@ function FilterByArtist() {
   return (
     <div>
       <form onSubmit={handleSubmit} className="container">
-        <div className="row mb-3 d-flex justify-content-center">
-          <div className="col-sm-10 col-md-8 col-lg-4">
-            <label className="form-label visually-hidden">
-              Search by artist
-            </label>
-            <input
-              disabled={loading}
-              type="text"
-              value={artistName}
-              onChange={(ev) => setArtistName(ev.target.value)}
-              className="search-box form-control w-100 mx-auto"
-              placeholder="Search an artist...."
-            />
+        <div className="row">
+          <div className="col">
+            <div className="row mb-3 d-flex justify-content-center">
+              <div className="col-sm-10 col-md-8 col-lg-4">
+                <label className="form-label visually-hidden">
+                  Search by artist
+                </label>
+                <input
+                  disabled={loading}
+                  type="text"
+                  value={artistName}
+                  onChange={(ev) => setArtistName(ev.target.value)}
+                  className="search-box form-control w-100 mx-auto"
+                  placeholder="Search an artist...."
+                />
+              </div>
+            </div>
           </div>
         </div>
+
         {loading ? (
           <Spinner animation="border mx-auto" role="status" variant="light">
             <span className="visually-hidden">Loading...</span>

@@ -3,7 +3,7 @@ import "../styles/Album.css";
 
 function Album({ album }) {
   return (
-    <div>
+    <div className="px-3 py-4">
       <img
         className="album-image img-fluid shadow mb-3 bg-body rounded-3"
         src={album.images[0].url}

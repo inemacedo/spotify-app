@@ -1,6 +1,6 @@
 #floatingLogs {
     position: fixed;
-    top: 80%;
+    top: 8%;
     right: 0;
     transform: translate(calc(50% - 1rem), -50%) rotate(-90deg);
     border: 1px;
